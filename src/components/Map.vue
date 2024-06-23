@@ -1,20 +1,19 @@
 <template>
-  <v-row align="center"
-      justify="center">
+  <v-row align="center" justify="center">
     <v-col cols="3">
       <h2 class="text-h5 font-weight-bold">{{ name }}</h2>
     </v-col>
 
     <v-col cols="3">
-      <h2 class="text-h5 font-weight-bold" align="center">{{ formatTime(soloCountdown) }}</h2>
+      <h2 :class="{'text-h5 font-weight-bold': true, 'green-text': soloCountdown < 180}" align="center">{{ formatTime(soloCountdown) }}</h2>
     </v-col>
 
     <v-col cols="3">
-      <h2 class="text-h5 font-weight-bold" align="center">{{ formatTime(duoCountdown) }}</h2>
+      <h2 :class="{'text-h5 font-weight-bold': true, 'green-text': duoCountdown < 180}" align="center">{{ formatTime(duoCountdown) }}</h2>
     </v-col>
 
     <v-col cols="3">
-      <h2 class="text-h5 font-weight-bold" align="center">{{ formatTime(trioCountdown) }}</h2>
+      <h2 :class="{'text-h5 font-weight-bold': true, 'green-text': trioCountdown < 180}" align="center">{{ formatTime(trioCountdown) }}</h2>
     </v-col>
   </v-row>
 </template>
@@ -46,7 +45,8 @@ const formatTime = (seconds: number): string => {
 
 const calculateCountdowns = () => {
   const now = Math.floor(performance.now() / 1000);
-  const elapsed = (now + currentTimeSeconds + props.startTime - 1) % 540; // 540 seconds = 9 minutes
+  const startOfDay = Math.floor(new Date().setUTCHours(0, 0, 0, 0) / 1000);
+  const elapsed = (now + currentTimeSeconds + props.startTime - startOfDay - 1) % 540; // 540 seconds = 9 minutes
 
   soloCountdown.value = (540 - elapsed) % 540;
   duoCountdown.value = (540 - elapsed + 180) % 540;
@@ -61,3 +61,9 @@ onMounted(() => {
   onBeforeUnmount(() => clearInterval(interval));
 });
 </script>
+
+<style scoped>
+.green-text {
+  color: green;
+}
+</style>
