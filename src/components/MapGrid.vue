@@ -6,14 +6,14 @@
         :startTime="0"
       />
       <Map
-        name="Ice Cavern"
-        imageSrc="@/assets/frost.png"
-        :startTime="180" 
-      />
-      <Map
         name="Forgotten Castle"
         imageSrc="@/assets/castle.png"
         :startTime="360"
+      />
+      <Map
+        name="Frost Mountain"
+        imageSrc="@/assets/frost.png"
+        :startTime="180" 
       />
     </v-container>
   </template>
