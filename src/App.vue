@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <MapGrid />
+      <router-view />
     </v-main>
   </v-app>
 </template>
