@@ -20,6 +20,9 @@
         imageSrc="@/assets/frost.png"
         :startTime="180" 
       />
+      <v-row align="end" justify="center">
+        <div class="text-h6 ma-2">*If times are out of sync please refresh</div>
+      </v-row>
     </v-responsive>
   </v-container>
   </template>

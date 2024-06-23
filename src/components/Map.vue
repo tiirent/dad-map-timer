@@ -5,15 +5,15 @@
     </v-col>
 
     <v-col cols="3">
-      <h2 :class="{'text-h5 font-weight-bold': true, 'green-text': soloCountdown < 180}" align="center">{{ formatTime(soloCountdown) }}</h2>
+      <h2 :class="{'text-h6 font-weight-bold': true, 'green-text': soloCountdown < 180}" align="center">{{ formatTime(soloCountdown) }}</h2>
     </v-col>
 
     <v-col cols="3">
-      <h2 :class="{'text-h5 font-weight-bold': true, 'green-text': duoCountdown < 180}" align="center">{{ formatTime(duoCountdown) }}</h2>
+      <h2 :class="{'text-h6 font-weight-bold': true, 'green-text': duoCountdown < 180}" align="center">{{ formatTime(duoCountdown) }}</h2>
     </v-col>
 
     <v-col cols="3">
-      <h2 :class="{'text-h5 font-weight-bold': true, 'green-text': trioCountdown < 180}" align="center">{{ formatTime(trioCountdown) }}</h2>
+      <h2 :class="{'text-h6 font-weight-bold': true, 'green-text': trioCountdown < 180}" align="center">{{ formatTime(trioCountdown) }}</h2>
     </v-col>
   </v-row>
 </template>
