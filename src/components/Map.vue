@@ -61,7 +61,7 @@ const formatTime = (seconds: number): string => {
 
 const calculateCountdowns = () => {
   const now = Math.floor(performance.now() / 1000);
-  const elapsed = (now + currentTimeSeconds + props.startTime) % 540; // 540 seconds = 9 minutes
+  const elapsed = (now + currentTimeSeconds + props.startTime - 1) % 540; // 540 seconds = 9 minutes
 
   soloCountdown.value = (540 - elapsed) % 540;
   duoCountdown.value = (540 - elapsed + 180) % 540;
