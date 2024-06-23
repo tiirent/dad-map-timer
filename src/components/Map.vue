@@ -1,35 +1,20 @@
 <template>
-  <v-row>
+  <v-row align="center"
+      justify="center">
     <v-col cols="3">
-      <v-card class="py-4" rounded="lg">
-        <template #title>
-          <h2 class="text-h5 font-weight-bold">{{ name }}</h2>
-        </template>
-      </v-card>
+      <h2 class="text-h5 font-weight-bold">{{ name }}</h2>
     </v-col>
 
     <v-col cols="3">
-      <v-card class="py-4" color="surface-variant" rounded="lg" variant="outlined">
-        <template #title>
-          {{ formatTime(soloCountdown) }}
-        </template>
-      </v-card>
+      <h2 class="text-h5 font-weight-bold" align="center">{{ formatTime(soloCountdown) }}</h2>
     </v-col>
 
     <v-col cols="3">
-      <v-card class="py-4" color="surface-variant" rounded="lg" variant="outlined">
-        <template #title>
-          {{ formatTime(duoCountdown) }}
-        </template>
-      </v-card>
+      <h2 class="text-h5 font-weight-bold" align="center">{{ formatTime(duoCountdown) }}</h2>
     </v-col>
 
     <v-col cols="3">
-      <v-card class="py-4" color="surface-variant" rounded="lg" variant="outlined">
-        <template #title>
-          {{ formatTime(trioCountdown) }}
-        </template>
-      </v-card>
+      <h2 class="text-h5 font-weight-bold" align="center">{{ formatTime(trioCountdown) }}</h2>
     </v-col>
   </v-row>
 </template>

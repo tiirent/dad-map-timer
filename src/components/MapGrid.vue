@@ -1,5 +1,10 @@
 <template>
-    <v-container>
+  <v-container class="fill-height">
+    <v-responsive
+      class="align-centerfill-height mx-auto"
+      max-width="900"
+    >
+      <Header />
       <Map
         name="Goblin Cave"
         imageSrc="@/assets/goblin.png"
@@ -15,11 +20,13 @@
         imageSrc="@/assets/frost.png"
         :startTime="180" 
       />
-    </v-container>
+    </v-responsive>
+  </v-container>
   </template>
   
   <script setup lang="ts">
   import Map from './Map.vue';
+  import Header from './Header.vue';
   </script>
   
   <style scoped>
